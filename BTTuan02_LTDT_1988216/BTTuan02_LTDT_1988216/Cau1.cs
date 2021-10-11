@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BTTuan02_LTDT_1988216
 {
@@ -23,12 +24,36 @@ namespace BTTuan02_LTDT_1988216
 
             Graph G = new Graph(MatrixCau1);
 
+            int start = 0;
+            int goal = 7;
+
+/*            G.initialize();
+            if(!G.DFS(start, goal))
+            {
+                Console.WriteLine("Khong co duong di");
+            }
+            else
+            {
+                Console.WriteLine("Danh sach dinh da duyet theo thu tu: ");
+                G.inThuTuDuyetDinh();
+                Console.WriteLine("");
+                Console.WriteLine("Duong di in kieu nguoc: ");
+                G.printPath(start, goal);
+            }*/
+
             G.initialize();
-
-            // Cau 1a
-            //MatrixCau1.printMatrix();
-
-
+            if (!G.BFS(start, goal))
+            {
+                Console.WriteLine("Khong co duong di");
+            }
+            else
+            {
+                Console.WriteLine("Danh sach dinh da duyet theo thu tu: ");
+                G.inThuTuDuyetDinh();
+                Console.WriteLine("");
+                Console.WriteLine("Duong di in kieu nguoc: ");
+                G.printPath(start, goal);
+            }
         }
     }
 }
