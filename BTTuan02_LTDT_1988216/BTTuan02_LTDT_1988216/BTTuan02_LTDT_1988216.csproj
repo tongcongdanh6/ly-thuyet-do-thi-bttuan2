@@ -46,7 +46,6 @@
   <ItemGroup>
     <Compile Include="AdjacencyMatrix.cs" />
     <Compile Include="Cau1.cs" />
-    <Compile Include="Cau2.cs" />
     <Compile Include="FileHandler.cs" />
     <Compile Include="Graph.cs" />
     <Compile Include="Program.cs" />

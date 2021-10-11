@@ -14,7 +14,7 @@ namespace BTTuan02_LTDT_1988216
         public void Run()
         {
             // Câu 1
-            string path1 = @"../../CauA_testcase1.txt";
+            string path1 = @"../../testcase2.txt";
 
             FileHandler fileHandleInstance = new FileHandler();
 
@@ -24,11 +24,16 @@ namespace BTTuan02_LTDT_1988216
 
             Graph G = new Graph(MatrixCau1);
 
-            int start = 0;
-            int goal = 7;
+            Console.Write("Nhap start = ");
+            int start = int.Parse(Console.ReadLine());
+            Console.Write("Nhap goal = ");
+            int goal = int.Parse(Console.ReadLine());
 
-/*            G.initialize();
-            if(!G.DFS(start, goal))
+
+            // DFS
+            G.initialize();
+            Console.WriteLine("=== Ket qua cho thuat toan DFS === ");
+            if (!G.DFS(start, goal))
             {
                 Console.WriteLine("Khong co duong di");
             }
@@ -39,9 +44,13 @@ namespace BTTuan02_LTDT_1988216
                 Console.WriteLine("");
                 Console.WriteLine("Duong di in kieu nguoc: ");
                 G.printPath(start, goal);
-            }*/
+            }
 
+
+            // BFS
             G.initialize();
+            Console.WriteLine("");
+            Console.WriteLine("=== Ket qua cho thuat toan BFS === ");
             if (!G.BFS(start, goal))
             {
                 Console.WriteLine("Khong co duong di");
@@ -53,6 +62,15 @@ namespace BTTuan02_LTDT_1988216
                 Console.WriteLine("");
                 Console.WriteLine("Duong di in kieu nguoc: ");
                 G.printPath(start, goal);
+            }
+
+            
+            // Xac dinh thanh phan lien thong
+            if (G.g.isUndirectedGraph())
+            {
+                G.initialize();
+                Console.WriteLine("\n=== Xac dinh thanh phan lien thong cho do thi vo huong === ");
+                G.countConnectedComponent();
             }
         }
     }
